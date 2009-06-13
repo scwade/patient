@@ -9,6 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20090613045403) do
+
+  create_table "patient_profiles", :force => true do |t|
+    t.integer  "patient_id", :null => false
+    t.string   "first_name", :null => false
+    t.string   "last_name",  :null => false
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.string   "province"
+    t.string   "country"
+    t.datetime "created_on", :null => false
+    t.datetime "updated_on", :null => false
+  end
 
 end
