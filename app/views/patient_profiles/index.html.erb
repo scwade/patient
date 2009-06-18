@@ -1,0 +1,37 @@
+<style>
+body {background-color:#ECF0F9;font-family:"sans-serif"}
+/*h1 {color:#758AB8}*/
+h1 {color:red}
+th, td {
+  width:150px;
+  text-align:left;
+  color:#758AB8 
+}
+th {font-size:18px}
+td {font-size:14px}
+</style>
+
+<h1>ProficientMD - List of current patients</h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Date of Birth</th>
+    <th>Gender</th>
+  </tr>
+
+<% for patient_profile in @patient_profiles %>
+  <tr>
+    <td><%=h patient_profile.first_name %></td>
+    <td><%=h patient_profile.last_name %></td>
+    <td><%=h patient_profile.date_of_birth %></td>
+    <td><%=h patient_profile.gender %></td>
+    <td><%= link_to 'Show', patient_profile %>
+  </tr>
+<%end%>
+
+</table>
+<br />
+
+<%= link_to 'New patient_profile', new_patient_profile_path %>

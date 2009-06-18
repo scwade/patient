@@ -9,17 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090615082208) do
+ActiveRecord::Schema.define(:version => 20090615051336) do
 
-  create_table "patient_profiles", :primary_key => "patient_id", :force => true do |t|
+  create_table "patient_profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip_code"
-    t.string   "province"
-    t.string   "country"
+    t.date     "date_of_birth"
+    t.string   "gender",        :limit => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

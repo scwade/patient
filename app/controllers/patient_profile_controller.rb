@@ -1,5 +1,6 @@
 class PatientProfileController < ApplicationController
   def index
+    @patient_profile = PatientProfile.find(:all) 
   end
 
   def new

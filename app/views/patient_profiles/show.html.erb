@@ -1,0 +1,31 @@
+<h1>ProficientMD - Show</h1>
+
+<% form_for :patient_profile do |f| %>
+  <fieldset>
+  <legend> Patient Record </legend>
+
+    <div>
+      <%= f.label :first_name, "First Name: " %>
+      <%= f.text_field :first_name, :size =>  35 %>
+    </div>
+
+    <div>
+      <%= f.label :last_name, "Last Name: " %>
+      <%= f.text_field :last_name, :size =>  35 %>
+    </div>
+
+    <div>
+      <%= f.label :date_of_birth, "Date of Birth: " %>
+      <%= f.text_field  :date_of_birth,  :size  => 15 %>
+    </div>
+
+    <div>
+      <%= f.label :gender, "Gender: " %>
+      <%= f.text_field  :gender, :size  =>  3 %>
+    </div>
+
+  </fieldset>
+<% end %>
+
+<%= link_to 'Edit', edit_patient_profile_path(@patient_profile) %> |
+<%= link_to 'Back', patient_profiles_path %>

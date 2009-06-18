@@ -5,8 +5,8 @@
 # Make sure the secret is at least 30 characters and all random, 
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
-  :key         => '_patient_session',
-  :secret      => '749f17d8b221538a6d3e5629db1c176f6b70b74bc4a9b368f3a5de718ae2edc6e29afe811cfd55346f2931943f9f4f22321c0e8f7988535ee97de4143b40935a'
+  :key         => '_proficientMD_session',
+  :secret      => 'e42a8431e29ca1ff6981e6c4544854a2eb07864d517a851cf139085484c31b3dbcbd1671e4f075447ae60d911538e75b412dbcc5ebd0dc36e62743e729bb9c28'
 }
 
 # Use the database for sessions instead of the cookie-based default,

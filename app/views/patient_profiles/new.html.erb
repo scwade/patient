@@ -1,0 +1,34 @@
+<h1>ProficientMD</h1>
+
+<% form_for(@patient_profile) do |f| %>
+  <fieldset>
+  <legend> New Patient Record </legend>
+
+    <div>
+      <%= f.label :first_name, "First Name: " %>
+      <%= f.text_field :first_name, :size =>  35 %>
+    </div>
+
+    <div>
+      <%= f.label :last_name, "Last Name: " %>
+      <%= f.text_field :last_name, :size =>  35 %>
+    </div>
+
+    <div>
+      <%= f.label :date_of_birth, "Date of Birth: " %>
+      <%= f.text_field  :date_of_birth,  :size  => 15 %>
+    </div>
+
+    <div>
+      <%= f.label :gender, "Gender: " %>
+      <%= f.text_field  :gender, :size  =>  3 %>
+    </div>
+
+  </fieldset>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+
+<%= link_to 'Back', patient_profiles_path %>
+<%end%>
