@@ -5,7 +5,6 @@ class CreatePatientProfiles < ActiveRecord::Migration
       t.string	  :last_name
       t.date	  :date_of_birth
       t.string    :gender,		:limit  =>  1
-      
 
     t.timestamps
     end
