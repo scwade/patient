@@ -1,0 +1,7 @@
+-------------------------------------------------- Object#public_methods
+     obj.public_methods(all=true)   => array
+------------------------------------------------------------------------
+     Returns the list of public methods accessible to _obj_. If the
+     _all_ parameter is set to +false+, only those methods in the
+     receiver will be listed.
+

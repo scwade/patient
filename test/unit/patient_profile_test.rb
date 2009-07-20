@@ -1,8 +1,7 @@
-require 'test_helper'
-
-class PatientProfileTest < ActiveSupport::TestCase
+class PatitenProfileTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true
   end
 end
+
