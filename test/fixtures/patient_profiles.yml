@@ -1,0 +1,70 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+rolland:
+  pmd_patient_id: 111111111 
+  pmd_user_id:    222222222 
+  physician_id:   333333333 
+  first_name: Rolland
+  last_name: Hoyt
+  primary_address: 32455 Capitola Ct
+  alternate_address: 33691 Simple Ct 
+  city: Union City 
+  state: CA 
+  zip_code: 945871234
+  country_province: AB
+  email_1: rolland@proficientMD.com 
+  email_2: hoyt94587@yahoo.com
+  phone_home: 5104290790 
+  phone_mobile: 5105520948 
+  phone_work: 5105520948
+  phone_fax: 5104290790
+  phone_emergency: 5104290790 
+  date_of_birth: 19570902  
+  gender: M
+  ethnicity: 12 
+
+jacki:
+  pmd_patient_id: 444444444 
+  pmd_user_id:    555555555 
+  physician_id:   666666666 
+  first_name: Jacki 
+  last_name: Hoyt
+  primary_address: 32455 Capitola Ct
+  alternate_address: 33691 Simple Ct
+  city: Union City
+  state: CA
+  zip_code: 945871234
+  country_province: AB
+  email_1: rolland@proficientMD.com
+  email_2: hoyt94587@yahoo.com
+  phone_home: 5104290790
+  phone_mobile: 5105520948
+  phone_work: 5105520948
+  phone_fax: 5104290790
+  phone_emergency: 5104290790
+  date_of_birth: 19601030
+  gender: F 
+  ethnicity: 12
+
+chris:
+  pmd_patient_id: 777777777 
+  pmd_user_id:    888888888 
+  physician_id:   999999999 
+  first_name: Chris 
+  last_name: Hoyt
+  primary_address: 32455 Capitola Ct
+  alternate_address: 33691 Simple Ct
+  city: Union City
+  state: CA
+  zip_code: 945871234
+  country_province: AB
+  email_1: rolland@proficientMD.com
+  email_2: hoyt94587@yahoo.com
+  phone_home: 5104290790
+  phone_mobile: 5105520948
+  phone_work: 5105520948
+  phone_fax: 5104290790
+  phone_emergency: 5104290790
+  date_of_birth: 19810709
+  gender: M
+  ethnicity: 12
