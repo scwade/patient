@@ -1,0 +1,80 @@
+class PatientProfile < ActiveRecord::Base
+
+#For update/create
+validates_date :date_of_birth, :before => Time.now.strftime("%d %b %y"), :after => '1 Jan 1900'
+
+
+# Over write accessor reader methods
+def phone_home
+	p = read_attribute("phone_home")
+	if !p.blank?
+	       	"(" + p.slice(0,3) + ")" + " " + p.slice(3,3) + "-" + p.slice(6,4)
+	end
+end
+#
+#def phone_mobile
+#	p = read_attribute("phone_mobile") 
+#	"(" + p.slice(0,3) + ")" + " " + p.slice(3,3) + "-" + p.slice(6,4)
+#end
+#
+#def phone_work
+#	p = read_attribute("phone_work")
+#        "(" + p.slice(0,3) + ")" + " " + p.slice(3,3) + "-" + p.slice(6,4)
+#end
+#
+#def phone_fax
+#        p = read_attribute("phone_fax")
+#        "(" + p.slice(0,3) + ")" + " " + p.slice(3,3) + "-" + p.slice(6,4)
+#end
+#
+#def phone_emergency
+#        p = read_attribute("phone_emergency")
+#        "(" + p.slice(0,3) + ")" + " " + p.slice(3,3) + "-" + p.slice(6,4)
+#end
+#
+#def zip_code
+#	p = read_attribute("zip_code")
+#	p.slice(0,5) + "-" + p.slice(5,4)
+#end
+
+
+#validates_presence_of  :first_name,                    :on => :save, :on => :update
+#validates_presence_of  :last_name,                     :on => :save, :on => :update
+#validates_presence_of  :state,                         :on => :save, :on => :update
+#validates_presence_of  :date_of_birth,                 :on => :save, :on => :update
+#validates_presence_of  :gender,                        :on => :save, :on => :update
+#validates_presence_of  :ethnicity,			:on => :save, :on => :update
+
+#validates_length_of   :first_name,                     :maximum => 255 
+#validates_length_of   :last_name,                     :maximum => 255
+#validates_length_of   :primary_address,               :maximum => 255
+#validates_length_of   :alternate_address,             :maximum => 255
+#validates_length_of   :city,                          :maximum => 255
+#validates_length_of   :state,                         :is => 2
+#validates_length_of   :zip_code,i                     :is => 5
+#validates_length_of   :country_province,              :is => 1     
+#validates_length_of   :email_1,                       :maximum => 255
+#validates_length_of   :email_2,                       :maximum => 255
+#validates_length_of   :phone_day,                     :is => 7
+#validates_length_of   :phone_evening,                 :is => 7
+#validates_length_of   :phone_mobile,                  :is => 7
+#validates_length_of   :phone_fax,                     :is => 7
+#validates_length_of   :phone_emergency,               :is => 7
+#validates_length_of   :gender,                        :is => 1
+#validates_length_of   :ethnicity,                     :maximum => 35 
+
+#validates_numericality_of   :zip_code,                :greater_than => 0, :less_than => 100000
+#validates_numericality_of   :phone_day,               :greater_than => 0, :less_than => 10000000
+#validates_numericality_of   :phone_evening,           :greater_than => 0, :less_than => 10000000
+#validates_numericality_of   :phone_mobile,            :greater_than => 0, :less_than => 10000000
+#validates_numericality_of   :phone_fax,               :greater_than => 0, :less_than => 10000000
+#validates_numericality_of   :phone_emergency,         :greater_than => 0, :less_than => 10000000
+
+	def before_create
+		self.pmd_patient_id = 11111111
+		self.pmd_user_id = 22222222
+		self.first_name = "Rolland"
+		self.last_name = "Hoyt"
+	end	
+
+end

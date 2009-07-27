@@ -1,0 +1,23 @@
+class CreatePatientProfiles < ActiveRecord::Migration
+  def self.up
+    create_table :patient_profiles do |t|
+      t.column  :patient_id  :integer  :null => false  :uniq => true
+      t.column  :first_name  :string   :null => false
+      t.column  :last_name   :string   :null => false
+      t.column  :address     :string   :null => true
+      t.column  :city        :string   :null => true
+      t.column  :state       :string   :null => true
+      t.column  :zip_code    :integer  :null => true
+      t.column  :province    :string   :null => true
+      t.column  :country     :string   :null => true
+
+      t.column  :created_on  :timestamp  :null => false
+      t.column  :updated_on  :timestamp  :null => false
+
+    end
+  end
+
+  def self.down
+    drop_table :patient_profiles
+  end
+end
