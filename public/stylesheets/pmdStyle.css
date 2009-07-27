@@ -5,11 +5,11 @@
      Patient Profile - 07/18/09
 
      (1) Create the wire frame with ID's by
-	          (a) "#main-wrapper" to encapsulate document
-                  - "#main-header" title of page
-	                - "#main-form" to contain a form
-	                - "#main-footer" to contain logo and revision date
-	                - "#main-copyright" last object in document
+	   (a) "#main-wrapper" to encapsulate document
+               - "#main-header" title of page
+	       - "#main-form" to contain a form
+	       - "#main-footer" to contain logo and revision date
+	       - "#main-copyright" last object in document
 
      (2) The "#main-form" use classes for most of the styling
             (a) "No style added to HTML tag <form>. "#main-form" parent applies style to <form>
@@ -29,148 +29,151 @@
             (d) ethinicity
             (e) gender
             (f) date_of_birth
+
+     (5) Class and Id section for index.html
 */
 
 
 /* The wire frame layout */
 body {
-	background-image: url(form-background.png);
+    background-image: url(form-background.png);
 }
 
-#main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons, .form-inputText {
-	background-color: #ECF0F9;
+#main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {
+    background-color: #ECF0F9;
 }
 
 #main-header, .main-sectionTitle, .form-subButton1, .form-subButton2 {
-	background-color: #C4D1EB;
+    background-color: #C4D1EB;
 }
 
 #main-wrapper {
-  width: 52em;
-	position: relative;
-	left: 50%;
-  margin-left: -26em;
-  margin-top: 0em;
-  padding: 0;
-	font-family: Verdana;
-	color: #262262;
-	font-weight: bold;
-	font-size: .8em;
-	border: solid .1em black;
+    width: 52em;
+    position: relative;
+    left: 50%;
+    margin-left: -26em;
+    margin-top: 0em;
+    padding: 0;
+    font-family: Verdana;
+    color: #262262;
+    font-weight: bold;
+    font-size: .8em;
+    border: solid .1em black;
 }
 
 #main-header {
-	width: 99.5%;
-	height: 1.6em;
-	border: outset .15em #ECF0F9;
-	font-size: 1.5em;
-	text-align: center;
+    width: 99.5%;
+    height: 1.6em;
+    border: outset .15em #ECF0F9;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 #main-form {
-	width: 90%;
-	margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #main-footer {
-	width: 100%;
-	clear: both;
-	height: 2.7em;
+    width: 100%;
+    clear: both;
+    height: 2.7em;
 }
 
 #footer-logo {
-	width: 11.8em;
-	height: 100%;
-	position: relative;
-	clear: left;
-	float: left;
-	margin-left: .8em;
+    width: 11.8em;
+    height: 100%;
+    position: relative;
+    clear: left;
+    float: left;
+    margin-left: .8em;
 }
 
 #footer-copyright {
-	width: 100%;
-	height: 1.5em;
-	clear: both;
-	margin-top: -1.6em;
-	font-size: .8em;
-	text-align: center;
+    width: 100%;
+    height: 1.5em;
+    clear: both;
+    margin-top: -1.6em;
+    font-size: .8em;
+    text-align: center;
 }
 
 #form-buttons {
-	width: 100%;
-	position: relative;
-	clear:both;
-	padding-top: .5em;
-	padding-bottom: .5em;
-	font-size: 3em;
+    width: 100%;
+    position: relative;
+    clear:both;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-size: 3em;
 }
 
 .form-subButton1, .form-subButton2 {
-	width: auto;
-	position:relative; 
-	float:right; 
-	background-color: #C4D1EB;
+    width: auto;
+    position:relative; 
+    float:right; 
+    background-color: #C4D1EB;
 }
 
 .form-subButton2 {
-	margin-right: 1.8em;
+    margin-right: 1.8em;
 }
 
 .form-label, .form-phoneLabel {
-	width: auto;
-	position: relative;
-	clear: left;
-	float: left;
-	display: inline;
-	margin-top: .3em;
-	margin-right: .5em;
-	line-height: normal;
-	font-weight: bold;
-	text-align: right;
+    width: auto;
+    position: relative;
+    clear: left;
+    float: left;
+    display: inline;
+    margin-top: .3em;
+    margin-right: .5em;
+    line-height: normal;
+    font-weight: bold;
+    text-align: right;
 }
 
 .form-label {
-	width: 13em;
+    width: 13em;
 }
 
 .form-phoneLabel {
-	width: 23em;
-	padding-top: .3em;
-	font-size: 85%;
+    width: 23em;
+    padding-top: .3em;
+    font-size: 85%;
 }
 
 #form-phoneLabelOffset {
-	margin-bottom: -2em; 
-	padding-top: .15em;
+    margin-bottom: -2em; 
+    padding-top: .15em;
 }
 
 .main-sectionTitle {
-	width: 36%;
-	position: relative;
-	clear: both;
-	float: left;
-	display: block;
-	margin-top: .6em;
-	margin-bottom: .6em;
-	padding-left: .5em;
-	line-height: normal;
-	border: outset .1em #ECF0F9;
-	font-size: 1.2em;
-	font-weight: bold;
-	text-align: left;
+    width: 36%;
+    position: relative;
+    clear: both;
+    float: left;
+    display: block;
+    margin-top: .6em;
+    margin-bottom: .6em;
+    padding-left: .5em;
+    line-height: normal;
+    border: outset .1em #ECF0F9;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
 }
 
 .form-inputText {
-	width: auto;
-	max-width: 402px;
-	float: left;
-	font-size: .8em;
-	margin-right: .5em;
-	margin-bottom: .4em;
-	margin-top: .4em;
-	padding: .2em;
-	border: inset .23em #ECF0F9;
-	color: black;
+    width: auto;
+    max-width: 402px;
+    float: left;
+    font-size: .8em;
+    margin-right: .5em;
+    margin-bottom: .4em;
+    margin-top: .4em;
+    padding: .2em;
+    border: inset .23em #ECF0F9;
+    color: black;
+    background-color: #FFFEF0;
 }
 
 #patient_profile_physician_id,
@@ -182,41 +185,76 @@ body {
 #patient_profile_date_of_birth_2i, 
 #patient_profile_date_of_birth_3i  {
 
-        width: auto;
-	float: left;
-	background-color: #ECF0F9;
+    width: auto;
+    float: left;
+    background-color: #FFFEF0;
 }
 
 /* Error style */
 
 #errorExplanation {
-  width: 100%;
-  height: auto;
-  position: relative;
-  clear:both;
-  float:left;
-  margin-bottom: 1em;
-  border: .1em solid red;
-  background-color: #F0F0F0;
-  font-size: .8em;
-  z-index: 1;
+    width: 100%;
+    height: auto;
+    position: relative;
+    clear:both;
+    float:left;
+    margin-bottom: 1em;
+    border: .1em solid red;
+    background-color: #F6F6F6;
+    font-size: .8em;
+    z-index: 1;
 }
 
 #errorExplanation h2 {
-  margin: -.1em;
-  padding-left: 1em;
-  text-align: left;
-  background-color: #C00;
-  font-size: 120%;
-  font-weight: bold;
-  color: #FFF;
+    margin: -.1em;
+    padding-left: 1em;
+    text-align: left;
+    background-color: #C00;
+    font-size: 120%;
+    font-weight: bold;
+    color: #FFF;
 }
 
 #errorExplanation p {
-  margin-bottom: -.5em;
-  padding-left: 1em;
-  font-size: 90%;
-  color: #333;
+    margin-bottom: -.5em;
+    padding-left: 1em;
+    font-size: 90%;
+    color: #333;
+}
+
+/* Index style */
+
+#index-body {
+    background-color:#ECF0F9;
+    font-family: Verdana;
+}
+
+#index-title {
+    background-color: #C4D1FB;
+    border: outset .1em #ECF0F9;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #262262
+}
+
+#index-newButton {
+    color: green; 
+    font-weight: bold;
+}
+
+.index-th, .index-td {
+    width:10em;
+    text-align:left;
+    color: black;
+}
+
+.index-th {
+    font-size: 90%;
+    text-decoration:underline;
+}
+
+.index-td {
+    font-size: 80%;
 }
 
 

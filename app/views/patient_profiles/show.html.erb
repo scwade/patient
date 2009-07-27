@@ -1,15 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-	<title> ProficientMD Show Patient Form </title>
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-
-</head>
-
-<body>
+<!-- Show Patient Profile -->
+    
     <div id="main-wrapper">
         <div id="main-header">'Show' Patient Profile</div>
         <div id="main-form">
@@ -45,24 +35,29 @@
 
 			      <label class="form-label" id="form-phoneLabelOffset" >Phone #s:</label>
 			      <label class="form-phoneLabel">Home:</label>
-			      <input class="form-inputText" name="phone_home" id="phone_home"
-                type="text" value="<%=h @patient_profile.phone_home %>" size="12" maxlength="12" readonly="readonly" tabindex="8" />
+			      <input class="form-inputText" name="phone_home" id="phone_home" type="text"
+                                value="<%=h number_to_phone(@patient_profile.phone_home, :area_code => true, :delimiter => " ")%>" 
+                                size="12" maxlength="12" readonly="readonly" tabindex="8" />
 			
 			      <label class="form-phoneLabel">Mobile:</label>
-			      <input class = "form-inputText" name="phone_mobile" id="phone_mobile"
-                type="text" value="<%=h @patient_profile.phone_mobile %>" size="12" maxlength="12" readonly="readonly" tabindex="9" />
+			      <input class = "form-inputText" name="phone_mobile" id="phone_mobile" type="text"
+                                value="<%=h number_to_phone(@patient_profile.phone_mobile, :area_code => true, :delimiter => " ")%>"
+                                size="12" maxlength="12" readonly="readonly" tabindex="9" />
 			
 			      <label class="form-phoneLabel">Work:</label>
-			      <input class = "form-inputText" name="phone_work" id="phone_work"
-                type="text" value="<%=h @patient_profile.phone_work %>" size="12" maxlength="12" readonly="readonly" tabindex="10" />
+			      <input class = "form-inputText" name="phone_work" id="phone_work" type="text"
+                                value="<%=h number_to_phone(@patient_profile.phone_work, :area_code => true, :delimiter => " ")%>"
+                                size="12" maxlength="12" readonly="readonly" tabindex="10" />
 			
 			      <label class="form-phoneLabel">Fax:</label>
-			      <input class = "form-inputText" name="phone_fax" id="phone_fax"
-                type="text" value="<%=h @patient_profile.phone_fax %>" size="12" maxlength="12" readonly="readonly" tabindex="11" />
+			      <input class = "form-inputText" name="phone_fax" id="phone_fax" type="text"
+                                value="<%=h number_to_phone(@patient_profile.phone_fax, :area_code => true, :delimiter => " ")%>"
+                                size="12" maxlength="12" readonly="readonly" tabindex="11" />
 			
                               <label class="form-phoneLabel">Emergency:</label>
-                              <input class = "form-inputText" name="phone_emergency" id="phone_emergency"
-                type="text" value="<%=h @patient_profile.phone_emergency %>" size="12" maxlength="12" readonly="readonly" tabindex="12" />
+                              <input class = "form-inputText" name="phone_emergency" id="phone_emergency" type="text"
+                                value="<%=h number_to_phone(@patient_profile.phone_emergency, :area_code => true, :delimiter => " ")%>"
+                                size="12" maxlength="12" readonly="readonly" tabindex="12" />
 
                               <label class="form-label">Address:</label>
                               <input class = "form-inputText" id="primary_address" name="primary_address"
@@ -115,5 +110,5 @@
 		    <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. </div>
 
     </div>
-</body>
-</html>
+
+<!-- End of Show Patient Profile -->

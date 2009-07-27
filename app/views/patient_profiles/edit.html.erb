@@ -1,15 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Edit Patient Profile -->
 
-<head>
-	<title> ProficientMD Edit Patient Form </title>
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-
-</head>
-
-<body>
     <div id="main-wrapper">
         <div id="main-header">'Edit' Patient Profile</div>
         <div id="main-form">
@@ -32,59 +22,59 @@
 			      <p>
 			      <label class="form-label">Primary Physician:</label>  
                               <%=f.select(:physician_id, 
-                                     [['10'=>' - Maria Wade'], ['11'=>' - Scott Wade'], ['12'=>' - Rolland Hoyt'], ['13'=>' - Jacki Hoyt']] ) %>
-			
+                                     { 'Maria Wade' => '10', 'Scott Wade' => '11', 'Rolland Hoyt' => '12', 'Jacki Hoyt' => '13'}) %>
+
 			      <label class="form-label">First Name:</label>
-                              <%= f.text_field :first_name, :size => 64, :maxlenght=>255, :tabindex=>2, :class=>"form-inputText" %>
+                              <%= f.text_field :first_name, :size => 64, :maxlength=>255, :tabindex=>2, :class=>"form-inputText" %>
 			
 			      <label class="form-label">Last Name:</label>
-                              <%= f.text_field :last_name, :size => 64, :maxlenght=>255, :tabindex=>3, :class=>"form-inputText" %>
+                              <%= f.text_field :last_name, :size => 64, :maxlength=>255, :tabindex=>3, :class=>"form-inputText" %>
 			
 			      <label class="form-label">Email:</label>
-                              <%= f.text_field :email_1, :size => 64, :maxlenght=>255, :tabindex=>4, :class=>"form-inputText" %>
+                              <%= f.text_field :email_1, :size => 64, :maxlength=>255, :tabindex=>4, :class=>"form-inputText" %>
                               
                               <label class="form-label">Verify Email:</label>
-                              <%= f.text_field :email_2, :size => 64, :maxlenght=>255, :tabindex=>5, :class=>"form-inputText" %>
+                              <%= f.text_field :email_1_confirmation, :value => @patient_profile.email_1,
+                                  :size => 64, :maxlength=>255, :tabindex=>5, :class=>"form-inputText" %>
 
 			      <label class="form-label" id="form-phoneLabelOffset" >Phone #s:</label>
 			      <label class="form-phoneLabel">Home:</label>
-                              <%= f.text_field :phone_home, :size => 12, :maxlenght=>12, :tabindex=>6, :class=>"form-inputText" %>
+                              <%= f.text_field :phone_home, :size => 10, :maxlength=>10, :tabindex=>6, :class=>"form-inputText" %>
 			
 			      <label class="form-phoneLabel">Mobile:</label>
-                              <%= f.text_field :phone_mobile, :size => 12, :maxlenght=>12, :tabindex=>7, :class=>"form-inputText" %>
+                              <%= f.text_field :phone_mobile, :size => 10, :maxlength=>10, :tabindex=>7, :class=>"form-inputText" %>
 			
 			      <label class="form-phoneLabel">Work:</label>
-                              <%= f.text_field :phone_work, :size => 12, :maxlenght=>12, :tabindex=>8, :class=>"form-inputText" %>
+                              <%= f.text_field :phone_work, :size => 10, :maxlength=>10, :tabindex=>8, :class=>"form-inputText" %>
 			
 			      <label class="form-phoneLabel">Fax:</label>
-                              <%= f.text_field :phone_fax, :size => 12, :maxlenght=>12, :tabindex=>9, :class=>"form-inputText" %>
+                              <%= f.text_field :phone_fax, :size => 10, :maxlength=>10, :tabindex=>9, :class=>"form-inputText" %>
 			
                               <label class="form-phoneLabel">Emergency:</label>
-                              <%= f.text_field :phone_emergency, :size => 12, :maxlenght=>12, :tabindex=>10, :class=>"form-inputText" %>
+                              <%= f.text_field :phone_emergency, :size => 10, :maxlength=>10, :tabindex=>10, :class=>"form-inputText" %>
 
                               <label class="form-label">Address:</label>
-                              <%= f.text_field :primary_address, :size => 64, :maxlenght=>255, :tabindex=>11, :class=>"form-inputText" %>
+                              <%= f.text_field :primary_address, :size => 64, :maxlength=>255, :tabindex=>11, :class=>"form-inputText" %>
 			
                               <label class="form-label">Address 2:</label>
-                              <%= f.text_field :alternate_address, :size => 64, :maxlenght=>255, :tabindex=>12, :class=>"form-inputText" %>
+                              <%= f.text_field :alternate_address, :size => 64, :maxlength=>255, :tabindex=>12, :class=>"form-inputText" %>
 			
                               <label class="form-label">City:</label>
-                              <%= f.text_field :city, :size => 24, :maxlenght=>255, :tabindex=>13, :class=>"form-inputText" %>
+                              <%= f.text_field :city, :size => 24, :maxlength=>255, :tabindex=>13, :class=>"form-inputText" %>
 			
                               <label class="form-label">State:</label>
-                              <%=f.select(:state,     
-                                     [['CA'=>' - California'], ['AZ'=>' - Arizona']] ) %>
+                              <%=f.select( :state, {'California' => 'CA', 'Arizona' => 'AZ'}) %>
 
                               <label class="form-label">Zip Code:</label>
-                              <%= f.text_field :zip_code, :size => 9, :maxlenght=>9, :tabindex=>15, :class=>"form-inputText" %>
+                              <%= f.text_field :zip_code, :size => 9, :maxlength=>10, :tabindex=>15, :class=>"form-inputText" %>
 			
                               <label class="form-label">Country/Province:</label>
                               <%=f.select(:country_province, 
-                                     [['US'=>' - United States'], ['AB'=>' - Alberta'], ['BC'=>' - British Columbia'], ['NL'=>' - Newfoundland and Labrador']] ) %>
+                                     { 'United States' => 'US', 'Alberta' => 'AB', 'British Columbia' => 'BC', 'Newfoundland and Labrador' => 'NL'}) %>
 			
                               <label class="form-label">Ethnicity:</label>
                               <%=f.select(:ethnicity, 
-                                     [['100'=>' - White'], ['101'=>' - Latin'], ['102'=>' - European'], ['103'=>' - Asian']] ) %>
+                                     { 'White' => '100', 'Latin' => '101', 'European' => '102', 'Asian' => '103' }) %>
 			
                               <label class="form-label">Gender:</label>
                               <%=f.select (:gender, %w{ M F }) %>
@@ -108,5 +98,5 @@
 		    <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. </div>
 
     </div>
-</body>
-</html>
+
+<!-- End of Edit Patient Profile -->

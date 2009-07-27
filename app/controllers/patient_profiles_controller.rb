@@ -1,4 +1,5 @@
 class PatientProfilesController < ApplicationController
+
   # GET /patient_profiles
   # GET /patient_profiles.xml
   def index
@@ -24,7 +25,12 @@ class PatientProfilesController < ApplicationController
   # GET /patient_profiles/new
   # GET /patient_profiles/new.xml
   def new
-    @patient_profile = PatientProfile.new
+    @patient_profile = PatientProfile.new 
+
+    # Temp, until sessions provides these two fields? --------------------------------------------------------------------------------- 
+    @patient_profile.pmd_patient_id = (PatientProfile.find(:last)).pmd_patient_id +=100   
+    @patient_profile.pmd_user_id =  (PatientProfile.find(:last)).pmd_user_id +=100 
+    #----------------------------------------------------------------------------------------------------------------------------------
 
     respond_to do |format|
       format.html # new.html.erb

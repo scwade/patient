@@ -1,38 +1,31 @@
-<style>
-body {background-color:#ECF0F9;font-family:"sans-serif"}
+<div id="index-body">
 
-h1 {color:red}
-th, td {
-  width:150px;
-  text-align:left;
-  color:#758AB8 
-}
-th {font-size:18px}
-td {font-size:14px}
-</style>
-
-<h1>ProficientMD - List of current patients</h1>
-
-<table>
-  <tr>
-    <th>Patient Id</th>
-    <th>User Id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-  </tr>
-
-<% for patient_profile in @patient_profiles %>
-  <tr>
-    <td><%=h patient_profile.pmd_patient_id %></td>
-    <td><%=h patient_profile.pmd_user_id %></td>
-    <td><%=h patient_profile.first_name %></td>
-    <td><%=h patient_profile.last_name %></td>
-    <td><%= button_to 'Show Patient Record', patient_profile_path(patient_profile.id), :method => :get , :class=>"form-subButton1"%></td>
-    <td><%= button_to 'Delete Patient Record', patient_profile_path(patient_profile.id), :method => :delete, :class=>"form-subButton1" %></td>
-  </tr>
-<%end%>
-
-</table>
-<br />
-
-<%= link_to 'New patient_profile', new_patient_profile_path %>
+    <h1 id="index-title">ProficientMD - List of current patients</h1>
+    
+    <table>
+      <tr>
+        <th class="index-th">Patient Id</th>
+        <th class="index-th">User Id</th>
+        <th class="index-th">First Name</th>
+        <th class="index-th">Last Name</th>
+      </tr>
+    
+    <% for patient_profile in @patient_profiles %>
+      <tr>
+        <td class="index-td"><%=h patient_profile.pmd_patient_id %></td>
+        <td class="index-td"><%=h patient_profile.pmd_user_id %></td>
+        <td class="index-td"><%=h patient_profile.first_name %></td>
+        <td class="index-td"><%=h patient_profile.last_name %></td>
+        <td class="index-td"><%= button_to 'Show Patient Record', patient_profile_path(patient_profile.id), :method=>:get , :class=>"form-subButton1"%></td>
+        <td class="index-td"><%= button_to 'Delete', patient_profile_path(patient_profile.id), :method=>:delete, :class=>"form-subButton1" %></td>
+      </tr>
+    <%end%>
+    
+    </table>
+    <br />
+    
+    <p>
+    <%= link_to 'New patient_profile', new_patient_profile_path, :id=>"index-newButton" %>
+    </p>
+    
+</div>
