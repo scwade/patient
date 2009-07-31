@@ -9,11 +9,9 @@ rolland:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct 
   city: Union City 
-  state: CA 
   zip_code: 945871234
-  country_province: AB
-  email_1: rolland@proficientMD.com 
-  email_2: hoyt94587@yahoo.com
+  state_province: AB
+  email: rolland@proficientMD.com 
   phone_home: 5104290790 
   phone_mobile: 5105520948 
   phone_work: 5105520948
@@ -32,11 +30,9 @@ jacki:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct
   city: Union City
-  state: CA
   zip_code: 945871234
-  country_province: AB
-  email_1: jacki@proficientMD.com
-  email_2: hoyt94587@yahoo.com
+  state_province: AB
+  email: jacki@proficientMD.com
   phone_home: 5104290790
   phone_mobile: 5105520948
   phone_work: 5105520948
@@ -55,11 +51,9 @@ chris:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct
   city: Union City
-  state: CA
   zip_code: 945871234
-  country_province: AB
-  email_1: chris@proficientMD.com
-  email_2: hoyt94587@yahoo.com
+  state_province: AB
+  email: chris@proficientMD.com
   phone_home: 5104290790
   phone_mobile: 5105520948
   phone_work: 5105520948

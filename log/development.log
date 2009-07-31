@@ -1,0 +1,163 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePatientProfiles (20090615032709)
+  [4;35;1mSQL (3.9ms)[0m   [0mCREATE TABLE `patient_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pmd_patient_id` int(11) NOT NULL, `pmd_user_id` int(11) NOT NULL, `physician_id` int(11) NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `primary_address` varchar(255), `alternate_address` varchar(255), `zip_code` varchar(9), `city` varchar(30), `state_province` varchar(2) NOT NULL, `email` varchar(255) NOT NULL, `phone_home` varchar(10), `phone_mobile` varchar(10), `phone_work` varchar(10), `phone_fax` varchar(10), `phone_emergency` varchar(10), `date_of_birth` date NOT NULL, `gender` varchar(1) NOT NULL, `ethnicity` smallint NOT NULL, `created_at` datetime, `updated_at` datetime) auto_increment = 1000[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090615032709')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSHOW FIELDS FROM `patient_profiles`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `patient_profiles`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `patient_profiles`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `proficientMD_test`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE DATABASE `proficientMD_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (20.7ms)[0m   [0mCREATE TABLE `patient_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `pmd_patient_id` int(11) NOT NULL, `pmd_user_id` int(11) NOT NULL, `physician_id` int(11) NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `primary_address` varchar(255), `alternate_address` varchar(255), `zip_code` varchar(9), `city` varchar(30), `state_province` varchar(2) NOT NULL, `email` varchar(255) NOT NULL, `phone_home` varchar(10), `phone_mobile` varchar(10), `phone_work` varchar(10), `phone_fax` varchar(10), `phone_emergency` varchar(10), `date_of_birth` date NOT NULL, `gender` varchar(1) NOT NULL, `ethnicity` smallint NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (29.8ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090615032709')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mPatientProfile Exists (0.4ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` = 1999) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` = 2999) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (1.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'rolland1@proficientMD.com') LIMIT 1[0m
+  [4;35;1mPatientProfile Create (0.3ms)[0m   [0mINSERT INTO `patient_profiles` (`city`, `primary_address`, `state_province`, `created_at`, `zip_code`, `phone_emergency`, `ethnicity`, `phone_fax`, `updated_at`, `pmd_user_id`, `phone_home`, `gender`, `pmd_patient_id`, `alternate_address`, `phone_work`, `last_name`, `date_of_birth`, `physician_id`, `first_name`, `email`, `phone_mobile`) VALUES(NULL, NULL, 'AB', '2009-07-31 09:08:50', NULL, NULL, 12, NULL, '2009-07-31 09:08:50', 2999, NULL, 'M', 1999, NULL, NULL, 'Hoyt', '1969-12-31', 3999, 'Rolland', 'rolland1@proficientMD.com', NULL)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mPatientProfile Exists (0.4ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` = 1999 AND `patient_profiles`.id <> 422094565) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` = 2999 AND `patient_profiles`.id <> 422094565) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'rolland1@proficientMD.com' AND `patient_profiles`.id <> 422094565) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@h.com') LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.3ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@h.net') LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (1.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@h.gov') LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.3ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'abcdefghijk0123456789@abcdefghijk0123456789.com') LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY '@h.com') LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.3ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'hh.com') LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@.com') LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.3ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@hcom') LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'h@h.') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.3ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (2.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.5ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (1.0ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (1.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPatientProfile Exists (2.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.4ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (1.0ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (2.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.4ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (1.0ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.9ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (1.0ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.0ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (1.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mPatientProfile Exists (0.4ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` = 0) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.2ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` = 0) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.1ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (0.1ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.9ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPatientProfile Load (1.2ms)[0m   [0;1mSELECT * FROM `patient_profiles` WHERE (`patient_profiles`.`id` = 120605670) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mPatientProfile Exists (0.3ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_patient_id` = 100000000) LIMIT 1[0m
+  [4;35;1mPatientProfile Exists (0.2ms)[0m   [0mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`pmd_user_id` = 200000000) LIMIT 1[0m
+  [4;36;1mPatientProfile Exists (2.4ms)[0m   [0;1mSELECT `patient_profiles`.id FROM `patient_profiles` WHERE (`patient_profiles`.`email` = BINARY 'rolland@proficientMD.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m

@@ -7,12 +7,10 @@ CREATE TABLE `patient_profiles` (
   `last_name` varchar(255) NOT NULL,
   `primary_address` varchar(255) default NULL,
   `alternate_address` varchar(255) default NULL,
-  `city` varchar(30) default NULL,
-  `state` varchar(2) NOT NULL,
   `zip_code` varchar(9) default NULL,
-  `country_province` varchar(2) NOT NULL,
+  `city` varchar(30) default NULL,
+  `state_province` varchar(2) NOT NULL,
   `email_1` varchar(255) NOT NULL,
-  `email_2` varchar(255) default NULL,
   `phone_home` varchar(10) default NULL,
   `phone_mobile` varchar(10) default NULL,
   `phone_work` varchar(10) default NULL,
@@ -24,7 +22,7 @@ CREATE TABLE `patient_profiles` (
   `created_at` datetime default NULL,
   `updated_at` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=422094566 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=422094625 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) NOT NULL,

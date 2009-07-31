@@ -19,12 +19,10 @@ ActiveRecord::Schema.define(:version => 20090615032709) do
     t.string   "last_name",                       :null => false
     t.string   "primary_address"
     t.string   "alternate_address"
-    t.string   "city",              :limit => 30
-    t.string   "state",             :limit => 2,  :null => false
     t.string   "zip_code",          :limit => 9
-    t.string   "country_province",  :limit => 2,  :null => false
-    t.string   "email_1",                         :null => false
-    t.string   "email_2"
+    t.string   "city",              :limit => 30
+    t.string   "state_province",    :limit => 2,  :null => false
+    t.string   "email",                           :null => false
     t.string   "phone_home",        :limit => 10
     t.string   "phone_mobile",      :limit => 10
     t.string   "phone_work",        :limit => 10

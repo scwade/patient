@@ -1,102 +1,99 @@
 <!-- Edit Patient Profile -->
 
     <div id="main-wrapper">
-        <div id="main-header">'Edit' Patient Profile</div>
-        <div id="main-form">
+      <div id="main-header">'Edit' Patient Profile</div>
+      <div id="main-form">
 		
-		      <div class="main-sectionTitle">Patient Id's</div>
+        <div class="main-sectionTitle">Patient Id's</div>
 
-                      <label class="form-label">Patient ID:</label>
-                      <input class = "form-inputText" name="pmd_patient_id" id="pmd_patient_id"
-              type="text" value="<%=h @patient_profile.pmd_patient_id %>" size="20" maxlength="32" readonly="readonly" />
+        <label class="form-label">Patient ID:</label>
+        <input class = "form-inputText" name="pmd_patient_id" id="pmd_patient_id"
+          type="text" value="<%=h @patient_profile.pmd_patient_id %>" size="20" maxlength="32" readonly="readonly" />
 
-                      <label class="form-label">User ID:</label>
-                      <input class = "form-inputText" name="pmd_user_id" id="pmd_user_id"
-              type="text" value="<%=h @patient_profile.pmd_user_id%>" size="20" maxlength="32" readonly="readonly" />
+        <label class="form-label">User ID:</label>
+        <input class = "form-inputText" name="pmd_user_id" id="pmd_user_id"
+          type="text" value="<%=h @patient_profile.pmd_user_id%>" size="20" maxlength="32" readonly="readonly" />
 
-		      <div class="main-sectionTitle">Contact Information</div>
+        <div class="main-sectionTitle">Contact Information</div>
 
-                      <% form_for @patient_profile do |f| %>
-                          <%=error_messages_for(:patient_profile) %>
+        <% form_for @patient_profile do |f| %>
+          <%=error_messages_for(:patient_profile) %>
 
-			      <p>
-			      <label class="form-label">Primary Physician:</label>  
-                              <%=f.select(:physician_id, 
-                                     { 'Maria Wade' => '10', 'Scott Wade' => '11', 'Rolland Hoyt' => '12', 'Jacki Hoyt' => '13'}) %>
+          <p>
+            <label class="form-label">Primary Physician:</label>  
+            <%=f.select(:physician_id, 
+              { 'Maria Wade' => '10', 'Scott Wade' => '11', 'Rolland Hoyt' => '12', 'Jacki Hoyt' => '13'}) %>
 
-			      <label class="form-label">First Name:</label>
-                              <%= f.text_field :first_name, :size => 64, :maxlength=>255, :tabindex=>2, :class=>"form-inputText" %>
+            <label class="form-label">First Name:</label>
+            <%= f.text_field :first_name, :size => 64, :maxlength=>255, :tabindex=>2, :class=>"form-inputText" %>
 			
-			      <label class="form-label">Last Name:</label>
-                              <%= f.text_field :last_name, :size => 64, :maxlength=>255, :tabindex=>3, :class=>"form-inputText" %>
+            <label class="form-label">Last Name:</label>
+            <%= f.text_field :last_name, :size => 64, :maxlength=>255, :tabindex=>3, :class=>"form-inputText" %>
 			
 			      <label class="form-label">Email:</label>
-                              <%= f.text_field :email_1, :size => 64, :maxlength=>255, :tabindex=>4, :class=>"form-inputText" %>
+            <%= f.text_field :email, :size => 64, :maxlength=>255, :tabindex=>4, :class=>"form-inputText" %>
                               
-                              <label class="form-label">Verify Email:</label>
-                              <%= f.text_field :email_1_confirmation, :value => @patient_profile.email_1,
-                                  :size => 64, :maxlength=>255, :tabindex=>5, :class=>"form-inputText" %>
+            <label class="form-label">Verify Email:</label>
+            <%= f.text_field :email_confirmation, :value => @patient_profile.email,
+              :size => 64, :maxlength=>255, :tabindex=>5, :class=>"form-inputText" %>
 
-			      <label class="form-label" id="form-phoneLabelOffset" >Phone #s:</label>
-			      <label class="form-phoneLabel">Home:</label>
-                              <%= f.text_field :phone_home, :size => 10, :maxlength=>10, :tabindex=>6, :class=>"form-inputText" %>
+            <label class="form-label" id="form-phoneLabelOffset" >Phone #s:</label>
+            <label class="form-phoneLabel">Home:</label>
+            <%= f.text_field :phone_home, :size => 10, :maxlength=>10, :tabindex=>6, :class=>"form-inputText" %>
 			
-			      <label class="form-phoneLabel">Mobile:</label>
-                              <%= f.text_field :phone_mobile, :size => 10, :maxlength=>10, :tabindex=>7, :class=>"form-inputText" %>
+            <label class="form-phoneLabel">Mobile:</label>
+              <%= f.text_field :phone_mobile, :size => 10, :maxlength=>10, :tabindex=>7, :class=>"form-inputText" %>
 			
-			      <label class="form-phoneLabel">Work:</label>
-                              <%= f.text_field :phone_work, :size => 10, :maxlength=>10, :tabindex=>8, :class=>"form-inputText" %>
+            <label class="form-phoneLabel">Work:</label>
+            <%= f.text_field :phone_work, :size => 10, :maxlength=>10, :tabindex=>8, :class=>"form-inputText" %>
 			
-			      <label class="form-phoneLabel">Fax:</label>
-                              <%= f.text_field :phone_fax, :size => 10, :maxlength=>10, :tabindex=>9, :class=>"form-inputText" %>
+            <label class="form-phoneLabel">Fax:</label>
+            <%= f.text_field :phone_fax, :size => 10, :maxlength=>10, :tabindex=>9, :class=>"form-inputText" %>
 			
-                              <label class="form-phoneLabel">Emergency:</label>
-                              <%= f.text_field :phone_emergency, :size => 10, :maxlength=>10, :tabindex=>10, :class=>"form-inputText" %>
+            <label class="form-phoneLabel">Emergency:</label>
+            <%= f.text_field :phone_emergency, :size => 10, :maxlength=>10, :tabindex=>10, :class=>"form-inputText" %>
 
-                              <label class="form-label">Address:</label>
-                              <%= f.text_field :primary_address, :size => 64, :maxlength=>255, :tabindex=>11, :class=>"form-inputText" %>
+            <label class="form-label">Address:</label>
+            <%= f.text_field :primary_address, :size => 64, :maxlength=>255, :tabindex=>11, :class=>"form-inputText" %>
 			
-                              <label class="form-label">Address 2:</label>
-                              <%= f.text_field :alternate_address, :size => 64, :maxlength=>255, :tabindex=>12, :class=>"form-inputText" %>
+            <label class="form-label">Address 2:</label>
+            <%= f.text_field :alternate_address, :size => 64, :maxlength=>255, :tabindex=>12, :class=>"form-inputText" %>
 			
-                              <label class="form-label">City:</label>
-                              <%= f.text_field :city, :size => 24, :maxlength=>255, :tabindex=>13, :class=>"form-inputText" %>
+            <label class="form-label">City:</label>
+            <%= f.text_field :city, :size => 24, :maxlength=>255, :tabindex=>13, :class=>"form-inputText" %>
+	
+            <label class="form-label">State/Province:</label>
+            <%=f.select(:state_province, 
+              { 'United States' => 'US', 'Alberta' => 'AB', 'British Columbia' => 'BC', 'Newfoundland and Labrador' => 'NL'}) %>
+ 
+            <label class="form-label">Zip Code:</label>
+            <%= f.text_field :zip_code, :size => 9, :maxlength=>10, :tabindex=>14, :class=>"form-inputText" %>
 			
-                              <label class="form-label">State:</label>
-                              <%=f.select( :state, {'California' => 'CA', 'Arizona' => 'AZ'}) %>
+            <label class="form-label">Ethnicity:</label>
+            <%=f.select(:ethnicity, 
+              { 'White' => '100', 'Latin' => '101', 'European' => '102', 'Asian' => '103' }) %>
+			
+            <label class="form-label">Gender:</label>
+            <%=f.select (:gender, %w{ M F }) %>
+			
+            <label class="form-label">Date of Birth:</label>
+            <%=f.date_select(:date_of_birth, :discard_minute=>true, :start_year=>1900, :end_year=>Time.now.year) %>
+          </p> 
 
-                              <label class="form-label">Zip Code:</label>
-                              <%= f.text_field :zip_code, :size => 9, :maxlength=>10, :tabindex=>15, :class=>"form-inputText" %>
-			
-                              <label class="form-label">Country/Province:</label>
-                              <%=f.select(:country_province, 
-                                     { 'United States' => 'US', 'Alberta' => 'AB', 'British Columbia' => 'BC', 'Newfoundland and Labrador' => 'NL'}) %>
-			
-                              <label class="form-label">Ethnicity:</label>
-                              <%=f.select(:ethnicity, 
-                                     { 'White' => '100', 'Latin' => '101', 'European' => '102', 'Asian' => '103' }) %>
-			
-                              <label class="form-label">Gender:</label>
-                              <%=f.select (:gender, %w{ M F }) %>
-			
-                              <label class="form-label">Date of Birth:</label>
-                              <%=f.date_select(:date_of_birth, :discard_minute=>true, :start_year=>1900, :end_year=>Time.now.year) %> 
-                              </p>
-
-			    <div id="form-buttons">
-                                <%= f.submit  'Update', :confirm=>"Are you sure?", :class=>"form-subButton1" %>
-                                <% end %>
-                                <%= button_to 'Back', patient_profile_path(@patient_profile.id), :method => :get, :class=>"form-subButton2" %>
-			    </div>
-        </div>
+            <div id="form-buttons">
+              <%= f.submit  'Update', :confirm=>"Are you sure?", :class=>"form-subButton1" %>
+        <% end %>
+              <%= button_to 'Back', patient_profile_path(@patient_profile.id), :method => :get, :class=>"form-subButton2" %>
+            </div>
+      </div><!-- End of class="main-form" -->
 		
 		    <div id="main-footer">
 			      <div id="footer-logo">
-		<%= image_tag("proficientmd-logo.png", :size=>"155x35") %>
+              <%= image_tag("proficientmd-logo.png", :size=>"155x35") %>
             </div>
         </div>
 		    <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. </div>
 
-    </div>
+    </div><!-- End of class="main-wrapper" -->
 
 <!-- End of Edit Patient Profile -->
