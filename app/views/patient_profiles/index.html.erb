@@ -4,6 +4,7 @@
     
     <table>
       <tr>
+        <th class="index-th">Id:</th>
         <th class="index-th">Patient Id</th>
         <th class="index-th">User Id</th>
         <th class="index-th">First Name</th>
@@ -12,6 +13,7 @@
     
     <% for patient_profile in @patient_profiles %>
       <tr>
+        <td class="index-td"><%=h patient_profile.id %></td>
         <td class="index-td"><%=h patient_profile.pmd_patient_id %></td>
         <td class="index-td"><%=h patient_profile.pmd_user_id %></td>
         <td class="index-td"><%=h patient_profile.first_name %></td>

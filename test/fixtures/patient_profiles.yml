@@ -2,8 +2,8 @@
 
 rolland:
   pmd_patient_id: 100000000 
-  pmd_user_id:    200000000 
-  physician_id:   300000000 
+  pmd_user_id:    100000000 
+  physician_id:   100000000 
   first_name: Rolland
   last_name: Hoyt
   primary_address: 32455 Capitola Ct
@@ -22,9 +22,9 @@ rolland:
   ethnicity: 12 
 
 jacki:
-  pmd_patient_id: 100000100 
+  pmd_patient_id: 200000100 
   pmd_user_id:    200000100 
-  physician_id:   300000100 
+  physician_id:   200000100 
   first_name: Jacki 
   last_name: Hoyt
   primary_address: 32455 Capitola Ct
@@ -43,8 +43,8 @@ jacki:
   ethnicity: 12
 
 chris:
-  pmd_patient_id: 100000200 
-  pmd_user_id:    200000200 
+  pmd_patient_id: 300000200 
+  pmd_user_id:    300000200 
   physician_id:   300000200 
   first_name: Chris 
   last_name: Hoyt

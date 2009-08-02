@@ -28,8 +28,13 @@ class PatientProfilesController < ApplicationController
     @patient_profile = PatientProfile.new 
 
     # Temp, until sessions provides these two fields? --------------------------------------------------------------------------------- 
-    @patient_profile.pmd_patient_id = (PatientProfile.find(:last)).pmd_patient_id +=100   
-    @patient_profile.pmd_user_id =  (PatientProfile.find(:last)).pmd_user_id +=100 
+      if PatientProfile.count >= 1 
+        @patient_profile.pmd_patient_id = (PatientProfile.find(:last)).pmd_patient_id +=100 
+        @patient_profile.pmd_user_id =  (PatientProfile.find(:last)).pmd_user_id +=100 
+      else
+        @patient_profile.pmd_patient_id = 9000
+        @patient_profile.pmd_user_id    = 9000
+      end 
     #----------------------------------------------------------------------------------------------------------------------------------
 
     respond_to do |format|

@@ -1,7 +1,5 @@
 require 'test_helper'
 
-DEBUG_IS_ON = 0
-
 class PatientProfileTest < ActiveSupport::TestCase
   
   # load fixtures in case rake -I is used
@@ -60,7 +58,6 @@ class PatientProfileTest < ActiveSupport::TestCase
         p.errors.clear
         p.zip_code = x
         p.valid? # force the error
-        puts "X = #{}" + p.errors.on(:zip_code) unless DEBUG_IS_ON == 0
         assert p.errors.invalid?(:zip_code)
         assert_equal "use 5 or 9 digit zip; 94587, 945871234, 94587-1234", p.errors.on(:zip_code)
       end
@@ -158,16 +155,16 @@ class PatientProfileTest < ActiveSupport::TestCase
   def test_for_create_patient_profile_is_valid
 
     # Create object
-    p = PatientProfile.create(:pmd_patient_id => 1999,
-                              :pmd_user_id =>    2999,
-                              :physician_id =>   3999,
-                              :first_name => 'Rolland',
-                              :last_name => 'Hoyt',
-                              :state_province => 'AB',
-                              :email => 'rolland1@proficientMD.com',
-                              :date_of_birth => Time.at(0),
-                              :gender => 'M',
-                              :ethnicity => 12)
+    p = PatientProfile.create(:pmd_patient_id          => 1999,
+                              :pmd_user_id             => 2999,
+                              :physician_id            => 3999,
+                              :first_name              => 'Lisa',
+                              :last_name               => 'Hoyt',
+                              :state_province          => 'AB',
+                              :email                   => 'lisa@proficientMD.com',
+                              :date_of_birth           => Time.at(0),
+                              :gender                  => 'F',
+                              :ethnicity               => 12)
 
     # Check object is valid
     assert p.valid?
@@ -189,10 +186,6 @@ class PatientProfileTest < ActiveSupport::TestCase
    assert p.errors.invalid?(:email)
 
    # Check @errors{} msg
-   puts "Hello" unless DEBUG_IS_ON == 0 
-   puts "Error reported = " + p.errors[:pmd_patient_id] unless DEBUG_IS_ON == 0 
-   puts "Error returned = " + p.errors.on(:pmd_patient_id) unless DEBUG_IS_ON == 0 
-
    assert_equal "not unique, already used by different patient", p.errors.on(:pmd_patient_id)
    assert_equal "not unique, already used by different patient", p.errors.on(:pmd_user_id)
    assert_equal "not unique, already used by different patient", p.errors.on(:email) 
