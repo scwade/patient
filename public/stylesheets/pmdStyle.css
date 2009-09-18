@@ -46,7 +46,23 @@ body {
 #main-header, .main-sectionTitle, .form-subButton1, .form-subButton2 {
     background-color: #C4D1EB;
 }
+ 
+/* emd 
+#main-wrapper {
+    width: 80%;
+    position: relative;
+    clear: right;
+    float: right;
+    padding: 0;
+    font-family: Verdana;
+    color: #262262;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: solid .1em black;
+}
+*/
 
+/* proficientMD */
 #main-wrapper {
     width: 52em;
     position: relative;
@@ -57,15 +73,16 @@ body {
     font-family: Verdana;
     color: #262262;
     font-weight: bold;
-    font-size: .8em;
+    font-size: 1em;
     border: solid .1em black;
 }
+
 
 #main-header {
     width: 99.5%;
     height: 1.6em;
     border: outset .15em #ECF0F9;
-    font-size: 1.5em;
+    font-size: 150%;
     text-align: center;
 }
 
@@ -94,7 +111,7 @@ body {
     height: 1.5em;
     clear: both;
     margin-top: -1.6em;
-    font-size: .8em;
+    font-size: 80%;
     text-align: center;
 }
 
@@ -104,7 +121,7 @@ body {
     clear:both;
     padding-top: .5em;
     padding-bottom: .5em;
-    font-size: 3em;
+    font-size: 300%;
 }
 
 .form-subButton1, .form-subButton2 {
@@ -122,10 +139,9 @@ body {
     width: auto;
     position: relative;
     clear: left;
-    float: left;
+    float: left; 
     display: inline;
-    margin-top: .3em;
-    margin-right: .5em;
+    margin: .3em .5em .3em 0em;
     line-height: normal;
     font-weight: bold;
     text-align: right;
@@ -133,51 +149,45 @@ body {
 
 .form-label {
     width: 13em;
+    font-size: 90%;
 }
 
 .form-phoneLabel {
-    width: 23em;
-    padding-top: .3em;
-    font-size: 85%;
-}
-
-#form-phoneLabelOffset {
-    margin-bottom: -2em; 
-    padding-top: .15em;
+    width: 22em;
+    font-size: 80%;
 }
 
 .main-sectionTitle {
     width: 36%;
     position: relative;
-    clear: both;
-    float: left;
+    /*clear: both;
+    float: left;*/
     display: block;
     margin-top: .6em;
     margin-bottom: .6em;
     padding-left: .5em;
     line-height: normal;
     border: outset .1em #ECF0F9;
-    font-size: 1.2em;
+    font-size: 120%;
     font-weight: bold;
     text-align: left;
 }
 
 .form-inputText {
     width: auto;
-    max-width: 402px;
-    float: left;
-    font-size: .8em;
-    margin-right: .5em;
-    margin-bottom: .4em;
-    margin-top: .4em;
-    padding: .2em;
+    max-width: 400px;
+    margin: .25em 0em .25em .2em;
     border: inset .23em #ECF0F9;
     color: black;
     background-color: #FFFEF0;
+    font-size: 80%;
 }
+
+.form-inputText { font-size: 80%; }
 
 #patient_profile_physician_id,
 #patient_profile_gender,
+#patient_profile_city_auto_complete,
 #patient_profile_state_province, 
 #patient_profile_ethnicity,
 #patient_profile_date_of_birth_1i, 
@@ -185,11 +195,23 @@ body {
 #patient_profile_date_of_birth_3i  {
 
     width: auto;
-    float: left;
+    margin: .25em .2em .25em .2em;
     background-color: #FFFEF0;
+    font-size: 80%;
+}
+
+#patient_profile_city_auto_complete {
+    margin-left: -.1em;
+    z-index:1;
 }
 
 /* Error style */
+
+.fieldWithErrors {
+  float: left;
+  margin: .1em .1em;
+  background-color: #ED1C24;
+}
 
 #errorExplanation {
     width: 100%;
@@ -198,9 +220,9 @@ body {
     clear:both;
     float:left;
     margin-bottom: 1em;
-    border: .1em solid red;
-    background-color: #F6F6F6;
-    font-size: .8em;
+    border: .1em solid #ED1C24;
+    background-color: #E2E3E4;
+    font-size: 80%;
     z-index: 1;
 }
 
@@ -208,17 +230,16 @@ body {
     margin: -.1em;
     padding-left: 1em;
     text-align: left;
-    background-color: #C00;
+    background-color: #ED1C24;
     font-size: 120%;
     font-weight: bold;
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 #errorExplanation p {
     margin-bottom: -.5em;
     padding-left: 1em;
     font-size: 90%;
-    color: #333;
 }
 
 /* Index style */
@@ -231,7 +252,7 @@ body {
 #index-title {
     background-color: #C4D1FB;
     border: outset .1em #ECF0F9;
-    font-size: 1.2em;
+    font-size: 120%;
     font-weight: bold;
     color: #262262
 }
@@ -254,6 +275,34 @@ body {
 
 .index-td {
     font-size: 80%;
+}
+
+/* New AutoComplete */
+
+div.auto_complete {
+  position:absolute;
+  width: auto;
+  border: inset .23em #ECF0F9;
+
+}
+
+div.auto_complete ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+div.auto_complete ul li.selected { background-color: #C4D1EB;}
+
+div.auto_complete ul li {
+  height: auto;
+  display: block;
+  background-color: #FFFEF0;
+  list-style-type: none;
+  padding-left:1em;
+  font-size:100%;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 

@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 rolland:
+  id:  1000
   pmd_patient_id: 100000000 
   pmd_user_id:    100000000 
   physician_id:   100000000 
@@ -9,8 +10,9 @@ rolland:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct 
   city: Union City 
-  zip_code: 945871234
-  state_province: AB
+  zip5_code: 10000 
+  zip4_ext: 1234 
+  state_province: CA 
   email: rolland@proficientMD.com 
   phone_home: 5104290790 
   phone_mobile: 5105520948 
@@ -19,9 +21,10 @@ rolland:
   phone_emergency: 5104290790 
   date_of_birth: 19570902  
   gender: M
-  ethnicity: 12 
+  ethnicity: "white" 
 
 jacki:
+  id: 1001
   pmd_patient_id: 200000100 
   pmd_user_id:    200000100 
   physician_id:   200000100 
@@ -30,8 +33,9 @@ jacki:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct
   city: Union City
-  zip_code: 945871234
-  state_province: AB
+  zip5_code: 10000 
+  zip4_ext: 7777 
+  state_province: WY 
   email: jacki@proficientMD.com
   phone_home: 5104290790
   phone_mobile: 5105520948
@@ -40,9 +44,10 @@ jacki:
   phone_emergency: 5104290790
   date_of_birth: 19601030
   gender: F 
-  ethnicity: 12
+  ethnicity: "white" 
 
 chris:
+  id: 1002
   pmd_patient_id: 300000200 
   pmd_user_id:    300000200 
   physician_id:   300000200 
@@ -51,8 +56,9 @@ chris:
   primary_address: 32455 Capitola Ct
   alternate_address: 33691 Simple Ct
   city: Union City
-  zip_code: 945871234
-  state_province: AB
+  zip5_code: 10000 
+  zip4_ext: 8888 
+  state_province: AZ 
   email: chris@proficientMD.com
   phone_home: 5104290790
   phone_mobile: 5105520948
@@ -61,4 +67,4 @@ chris:
   phone_emergency: 5104290790
   date_of_birth: 19810709
   gender: M
-  ethnicity: 12
+  ethnicity: "white"

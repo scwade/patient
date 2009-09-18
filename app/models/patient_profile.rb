@@ -5,15 +5,21 @@ class PatientProfile < ActiveRecord::Base
 # ----------
 
 #Scrub form
-  before_save :clean_zip_code
+  before_save :validate_state, :clean_first_last_name
 
 #protected
-  def clean_zip_code
-    unless self.zip_code.blank?
-      self.zip_code.gsub!(/-/, '')
+  def validate_state
+    unless self.zip5_code.blank?
+      puts "Checking zip code!"
     end
   end
 
+  def clean_first_last_name
+    unless self.first_name.blank?
+      self.first_name.squish!
+      self.last_name.squish!
+    end
+  end
 
 # ---------------------------
 # From plugin - Date validation
@@ -34,11 +40,13 @@ class PatientProfile < ActiveRecord::Base
 # Format validations
 # ------------------
 
-  validates_format_of :zip_code,
-                      :unless => Proc.new { |p| p.zip_code.blank? },
-                      :message => "use 5 or 9 digit zip; 94587, 945871234, 94587-1234",
-                      :with => /^\d{5}$|^\d{5}[-]\d{4}$|^\d{9}$/
-                      
+  validates_format_of :zip5_code,
+                      :unless => Proc.new { |p| p.zip5_code.blank? },
+                      :with => /^\d{4,5}$/
+
+  validates_format_of :zip4_ext,
+                      :unless => Proc.new { |p| p.zip4_ext.blank? },
+                      :with => /^\d{4}$/
   
   validates_format_of :email,
                       :message => "use format like name@proficientmd.com",
@@ -88,7 +96,9 @@ class PatientProfile < ActiveRecord::Base
   validates_length_of   :alternate_address,  :maximum => 255,    :allow_blank => true     
   validates_length_of   :city,               :maximum => 30,     :allow_blank => true                                        
   validates_length_of   :state_province,     :is => 2                                     
-#  validates_length_of   :zip_code,           :maximum => 10,     :allow_blank => true
+  validates_length_of   :ethnicity,          :maximum => 60
+#  validates_length_of   :zip5,               :is => 5,           :allow_blank => true
+#  validates_length_of   :zip4_ext,           :is => 4,           :allow_blank => true
 #  validates_length_of   :phone_home,         :maximum => 10,     :allow_blank => true
 #  validates_length_of   :phone_work,         :maximum => 10,     :allow_blank => true
 #  validates_length_of   :phone_mobile,       :maximum => 10,     :allow_blank => true
@@ -99,7 +109,7 @@ class PatientProfile < ActiveRecord::Base
 # Numeric validations
 # ---------------------
 
-  validates_numericality_of :pmd_patient_id, :pmd_user_id, :physician_id, :ethnicity
+  validates_numericality_of :pmd_patient_id, :pmd_user_id, :physician_id
                             
 
 # --------------------

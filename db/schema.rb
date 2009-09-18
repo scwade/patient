@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090615032709) do
+ActiveRecord::Schema.define(:version => 20090901065316) do
 
   create_table "patient_profiles", :force => true do |t|
     t.integer  "pmd_patient_id",                  :null => false
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20090615032709) do
     t.string   "last_name",                       :null => false
     t.string   "primary_address"
     t.string   "alternate_address"
-    t.string   "zip_code",          :limit => 9
-    t.string   "city",              :limit => 30
+    t.integer  "zip5_code",         :limit => 8
+    t.integer  "zip4_ext"
+    t.string   "city",              :limit => 60
     t.string   "state_province",    :limit => 2,  :null => false
     t.string   "email",                           :null => false
     t.string   "phone_home",        :limit => 10
@@ -30,7 +31,33 @@ ActiveRecord::Schema.define(:version => 20090615032709) do
     t.string   "phone_emergency",   :limit => 10
     t.date     "date_of_birth",                   :null => false
     t.string   "gender",            :limit => 1,  :null => false
-    t.integer  "ethnicity",         :limit => 2,  :null => false
+    t.string   "ethnicity",         :limit => 60, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_addresses", :force => true do |t|
+    t.integer  "zip5_code",               :null => false
+    t.string   "state",      :limit => 2, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_ethnicities", :force => true do |t|
+    t.string   "description", :limit => 60, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_filter_cities", :force => true do |t|
+    t.string   "description", :limit => 60, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_filter_states", :force => true do |t|
+    t.string   "state",       :limit => 2,  :null => false
+    t.string   "description", :limit => 60, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

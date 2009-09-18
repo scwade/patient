@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :patient_profiles
-
+  map.resources :patient_profiles, :reference_filter_cities
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

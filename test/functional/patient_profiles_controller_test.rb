@@ -15,7 +15,7 @@ class PatientProfilesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create patient_profile" do
+  test "should 1 create patient_profile" do
     assert_difference('PatientProfile.count') do
       post :create, :patient_profile => { :pmd_patient_id    => 1999,
                                           :pmd_user_id       => 2999,
@@ -26,29 +26,29 @@ class PatientProfilesControllerTest < ActionController::TestCase
                                           :email             => 'lisa@proficientMD.com',
                                           :date_of_birth     => Time.at(0),
                                           :gender            => 'F',
-                                          :ethnicity         => 12}
+                                          :ethnicity         => 'White'}
       end
     assert_redirected_to patient_profile_path(assigns(:patient_profile))
   end
 
-  test "should show patient_profile" do
+  test "should 2 show patient_profile" do
     get :show, :id => patient_profiles(:rolland).to_param
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should 3 get edit" do
     get :edit, :id => patient_profiles(:rolland).to_param
     assert_response :success
   end
 
-  test "should update patient_profile" do
+  test "should 4 update patient_profile" do
     put :update, :id => patient_profiles(:rolland).to_param, :patient_profile => { }
     assert_redirected_to patient_profile_path(assigns(:patient_profile))
   end
 
-  test "should destroy patient_profile" do
+  test "should 5 destroy patient_profile" do
     assert_difference('PatientProfile.count', -1) do
-      delete :destroy, :id => patient_profiles(:chris).to_param
+      delete :destroy, :id => patient_profiles(:rolland).to_param
     end
 
     assert_redirected_to patient_profiles_path

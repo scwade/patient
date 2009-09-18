@@ -1,9 +1,10 @@
 class PatientProfilesController < ApplicationController
+  auto_complete_for :patient_profiles, :city
 
   # GET /patient_profiles
   # GET /patient_profiles.xml
   def index
-    @patient_profiles = PatientProfile.all
+    @patient_profiles = PatientProfile.find(:all, :order => :id)
 
     respond_to do |format|
       format.html # index.html.erb

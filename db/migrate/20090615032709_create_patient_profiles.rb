@@ -8,24 +8,25 @@ class CreatePatientProfiles < ActiveRecord::Migration
       t.string    :last_name,                     :null => false
       t.string    :primary_address      
       t.string    :alternate_address 
-      t.string    :zip_code,                                                     :limit => 9
-      t.string    :city,                                                         :limit => 30
+      t.integer   :zip5_code,                                                    :limit => 5
+      t.integer   :zip4_ext,                                                     :limit => 4
+      t.string    :city,                                                         :limit => 60 
       t.string    :state_province,                :null => false,                :limit => 2 
       t.string    :email,                         :null => false                
       t.string    :phone_home,                                                   :limit => 10
       t.string    :phone_mobile,                                                 :limit => 10 
       t.string    :phone_work,                                                   :limit => 10
-      t.string    :phone_fax,			                                 :limit => 10 
+      t.string    :phone_fax,                                                    :limit => 10 
       t.string    :phone_emergency,                                              :limit => 10 
       t.date      :date_of_birth,                 :null => false
       t.string    :gender,                        :null => false,                :limit => 1
-      t.integer   :ethnicity,                     :null => false,                :limit => 2 
+      t.string    :ethnicity,                     :null => false,                :limit => 60 
 
-    t.timestamps
+      t.timestamps
     end
   end
 
   def self.down
-    drop_table :patient_profiles
+    drop_table  :patient_profiles
   end
 end

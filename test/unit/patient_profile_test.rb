@@ -35,36 +35,6 @@ class PatientProfileTest < ActiveSupport::TestCase
   end
 
   # -----------------------------------------------------------------------------------------
-  # Test format_of :zip_code
-  # -----------------------------------------------------------------------------------------
-  def test_for_format_of_zip_code
-
-    # test data
-      good = %W( 94587 94587-1234 )
-       bad = %W( 9458 9458712345 94587--123 94587@1234 abcde abcdefghij abcde-fghi a-1234 94587-abcd ) 
-
-    # Create object
-      p = PatientProfile.new
-
-    # Test for good zip codes
-      good.each do |x|
-        p.zip_code = x
-        p.valid? # force error, if any
-        assert !p.errors.invalid?(:zip_code)
-      end
-
-    # Test for bad zip codes
-      bad.each do |x|
-        p.errors.clear
-        p.zip_code = x
-        p.valid? # force the error
-        assert p.errors.invalid?(:zip_code)
-        assert_equal "use 5 or 9 digit zip; 94587, 945871234, 94587-1234", p.errors.on(:zip_code)
-      end
-
-  end 
-
-  # -----------------------------------------------------------------------------------------
   # Test format_of :email 
   # -----------------------------------------------------------------------------------------
   def test_for_format_of_email
@@ -164,7 +134,7 @@ class PatientProfileTest < ActiveSupport::TestCase
                               :email                   => 'lisa@proficientMD.com',
                               :date_of_birth           => Time.at(0),
                               :gender                  => 'F',
-                              :ethnicity               => 12)
+                              :ethnicity               => "white")
 
     # Check object is valid
     assert p.valid?
@@ -199,20 +169,17 @@ class PatientProfileTest < ActiveSupport::TestCase
     # Create object
     p = PatientProfile.create(:pmd_patient_id => "a",
                               :pmd_user_id    => "b",
-                              :physician_id   => "c",
-                              :ethnicity      => "d")
+                              :physician_id   => "c")
 
     # Check @errors{}
     assert p.errors.invalid?(:pmd_patient_id)
     assert p.errors.invalid?(:pmd_user_id)
     assert p.errors.invalid?(:physician_id)
-    assert p.errors.invalid?(:ethnicity)
 
     # Check @errors{} msg
     assert_equal I18n.translate('activerecord.errors.messages.not_a_number'), p.errors.on(:pmd_patient_id)
     assert_equal I18n.translate('activerecord.errors.messages.not_a_number'), p.errors.on(:pmd_user_id)
     assert_equal I18n.translate('activerecord.errors.messages.not_a_number'), p.errors.on(:physician_id)
-    assert_equal I18n.translate('activerecord.errors.messages.not_a_number'), p.errors.on(:ethnicity)
   end
 
 
@@ -221,14 +188,14 @@ class PatientProfileTest < ActiveSupport::TestCase
   # ---------------------------------------------------------------------------------------------
   def test_for_length_of_attributes
     # Need test data
-    @max_255 = @max_30 = @max_9 = @is_2 = ""
+    @max_255 = @max_60 = @max_9 = @is_2 = ""
     255.times { @max_255 = @max_255 + "a" }
-     30.times { @max_30  = @max_30  + "a" }
+     60.times { @max_60  = @max_60  + "a" }
       2.times { @is_2    = @is_2    + "a" }
 
     # Now array to string
     @max_255 = @max_255.to_s
-    @max_30  = @max_30.to_s
+    @max_60  = @max_60.to_s
     @is_2    = @is_2.to_s
 
     # Lets test limits
@@ -236,9 +203,10 @@ class PatientProfileTest < ActiveSupport::TestCase
                            :last_name           => @max_255 + "y",
                            :primary_address     => @max_255 + "x",
                            :alternate_address   => @max_255 + "w",
-                           :city                => @max_30  + "v",
+                           :city                => @max_60  + "v",
                            :state_province      => @is_2    + "u",
-                           :email               => @max_255 + "t")
+                           :email               => @max_255 + "t",
+                           :ethnicity           => @max_60  + "s")
 
     assert !p.valid?
 
@@ -249,6 +217,7 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert p.errors.invalid?(:alternate_address)
     assert p.errors.invalid?(:city)
     assert p.errors.invalid?(:state_province)
+    assert p.errors.invalid?(:ethnicity)
  
 
     # Check @errors{} msg
@@ -256,8 +225,9 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>255), p.errors.on(:last_name)
     assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>255), p.errors.on(:primary_address)
     assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>255), p.errors.on(:alternate_address)
-    assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>30),  p.errors.on(:city)
+    assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>60),  p.errors.on(:city)
     assert_equal I18n.translate('activerecord.errors.messages.wrong_length', :count=>2),   p.errors.on(:state_province)
+    assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>60),  p.errors.on(:ethnicity)
   
 
 
@@ -266,7 +236,7 @@ class PatientProfileTest < ActiveSupport::TestCase
                            :last_name           => @max_255,
                            :primary_address     => @max_255,
                            :alternate_address   => @max_255,
-                           :city                => @max_30,
+                           :city                => @max_60,
                            :state_province      => @is_2)
 
     assert !p.valid?
